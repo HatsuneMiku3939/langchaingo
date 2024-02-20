@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 
+	openai "github.com/sashabaranov/go-openai"
 	"github.com/tmc/langchaingo/callbacks"
 	"github.com/tmc/langchaingo/llms"
 	"github.com/tmc/langchaingo/llms/openai/internal/openaiclient"
@@ -15,6 +16,7 @@ type ChatMessage = openaiclient.ChatMessage
 type LLM struct {
 	CallbacksHandler callbacks.Handler
 	client           *openaiclient.Client
+	newClient        *openai.Client
 }
 
 const (
